@@ -19,7 +19,7 @@ async function login() {
     </div>
 
     <div v-else>
-      <p>Vítej, {{ session.data?.user.email }}</p>
+      <p>Sup, {{ session.data?.user.email }}</p>
       <button  class="bg-red-500 text-white px-4 py-2 rounded cursor-pointer" @click="authClient.signOut()">Sign Out</button>
     </div>
   </div>
