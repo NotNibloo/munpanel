@@ -1,5 +1,5 @@
 <template>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
+  <h1 class="font-bold">
+    Sup
   </h1>
 </template>

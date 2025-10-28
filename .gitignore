@@ -26,3 +26,6 @@ logs
 #data
 data
 better-auth_migrations
+
+#utils
+utils.txt
