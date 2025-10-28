@@ -1,8 +1,5 @@
-import { auth } from '../../utils/auth';
-import { toNodeHandler } from 'better-auth/node';
+import { auth } from "@@/lib/auth";
 
-const handleAuthRequest = toNodeHandler(auth);
-
-export default defineEventHandler((event) => {
-  return handleAuthRequest(event.node.req, event.node.res);
+export default defineEventHandler(async (event) => {
+  return auth.handler(toWebRequest(event));
 });
