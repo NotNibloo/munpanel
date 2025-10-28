@@ -1,15 +1,9 @@
-import { authClient } from '@@/lib/auth-client'
-
-type SessionPayload = Awaited<ReturnType<typeof authClient.getSession>>
+import { authClient } from "~/lib/auth-client";
 
 export default defineNuxtRouteMiddleware(async () => {
-  if (import.meta.client) {
-    const session = await authClient.getSession()
-    if (!session?.data) return navigateTo('/sign-in')
-    return
-  }
+  const { data: session } = await authClient.useSession(useFetch);
 
-  const headers = useRequestHeaders(['cookie'])
-  const session = await $fetch<SessionPayload>('/api/auth/get-session', { headers })
-  if (!session?.data) return navigateTo('/sign-in')
-})
+  if (!session.value) {
+    return navigateTo("/sign-in");
+  }
+});

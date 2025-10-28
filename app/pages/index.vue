@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { authClient } from '@@/lib/auth-client'
+import { authClient } from '~/lib/auth-client'
 
 definePageMeta({ middleware: 'auth' })
 
@@ -13,7 +13,6 @@ async function signOut() {
     console.error('Failed to sign out', error)
   }
 }
-
 </script>
 
 <template>

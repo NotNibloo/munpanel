@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import { authClient } from '@@/lib/auth-client'
+import { authClient } from '~/lib/auth-client'
 
 const email = ref('')
 const password = ref('')
 const session = authClient.useSession()
-
-definePageMeta({ middleware: 'guest' })
 
 const router = useRouter()
 
