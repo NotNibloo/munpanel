@@ -1,6 +1,7 @@
 import { betterAuth } from 'better-auth';
 import Database from 'better-sqlite3';
-import { jwt } from "better-auth/plugins"
+import { jwt, username } from "better-auth/plugins";
+
 
 const db = new Database('./data/auth.db');
 
@@ -13,5 +14,6 @@ export const auth = betterAuth({
   },
    plugins: [ 
       jwt(), 
+      username() 
   ]
 });

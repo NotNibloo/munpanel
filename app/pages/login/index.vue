@@ -15,7 +15,7 @@ async function login() {
     <div v-if="!session.data">
       <input v-model="email" placeholder="Email" class="border p-2 mb-2">
       <input v-model="password" type="password" placeholder="Password" class="border p-2 mb-2">
-      <button class="bg-blue-500 text-white px-4 py-2 rounded cursor-pointer" @click="login">Přihlásit se</button>
+      <button class="bg-blue-500 text-white px-4 py-2 not-last:cursor-pointer" @click="login">Sign In</button>
     </div>
 
     <div v-else>
