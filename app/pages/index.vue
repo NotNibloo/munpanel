@@ -3,12 +3,10 @@ import { authClient } from '~/lib/auth-client'
 
 definePageMeta({ middleware: 'auth' })
 
-const router = useRouter()
-
 async function signOut() {
   try {
     await authClient.signOut()
-    await router.push('/sign-in')
+    await navigateTo('/sign-in')
   } catch (error) {
     console.error('Failed to sign out', error)
   }

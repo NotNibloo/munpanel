@@ -5,16 +5,21 @@ const email = ref('')
 const password = ref('')
 const session = authClient.useSession()
 
-const router = useRouter()
-
 async function signIn() {
   try {
     await authClient.signIn.email({ email: email.value, password: password.value })
-    await router.push('/')
+    await navigateTo('/')
   } catch (error) {
     console.error('Failed to sign in', error)
   }
 }
+
+watchEffect(() => {
+  if (session.value?.data?.user) {
+    navigateTo('/')
+  }
+})
+
 </script>
 
 <template>
