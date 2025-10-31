@@ -11,6 +11,9 @@ async function signOut() {
     console.error('Failed to sign out', error)
   }
 }
+
+const session = await authClient.getSession()
+console.log(session?.data?.user.id)
 </script>
 
 <template>

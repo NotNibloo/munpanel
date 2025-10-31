@@ -15,6 +15,6 @@ export const auth = betterAuth({
    plugins: [ 
       jwt(), 
       username(),
-      admin()
+      admin({adminUserIds: ["placeholder"]})
   ]
 });
